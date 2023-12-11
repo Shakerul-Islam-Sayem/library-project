@@ -1,4 +1,6 @@
 @extends('layouts.guest')
+@section('title'){{ 'Library Management System' }}
+@endsection
 @section('content')
     <div id="wrapper-admin">
         <div class="container">
@@ -19,7 +21,7 @@
                             <label>Password</label>
                             <input type="password" name="password" class="form-control" value="" required>
                         </div>
-                        <input type="submit" name="login" class="btn btn-success" value="login" />
+                        <input type="submit" name="login" class="w-25 mt-2 btn btn-success" value="login" />
                     </form>
                     @error('username')
                         <div class='alert alert-info'>{{ $message }}</div>

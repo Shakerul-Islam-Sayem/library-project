@@ -65,8 +65,9 @@ ul{
     transition: all 0.3s;
 }
 .menu li a:hover{
-    background: #fff;
+    background: #e0ffda;
     color: #3ca300ec;
+    box-shadow: 1px 1px 10px #9ab3907e;
 }
 /* Footer Styling */
 #footer{
@@ -261,8 +262,15 @@ ul{
   background: #3ca300ec;
   opacity: 0.9;
   padding: 40px 20px;
+  transition: .41s;
+}
+.card{
+    transition: 1s;
 }
 
+.card-body:hover{
+    box-shadow: 0px 0px 10px 2px rgb(0, 90, 0);
+}
 .card-body .card-text{
   color: #fff;
   font-size: 40px;

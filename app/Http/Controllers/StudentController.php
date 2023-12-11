@@ -16,7 +16,7 @@ class StudentController extends Controller
     public function index()
     {
         return view('student.index', [
-            'students' => student::Paginate(5)
+            'students' => student::Paginate(10)
         ]);
     }
 
@@ -81,7 +81,7 @@ class StudentController extends Controller
         $student->address = $request->address;
         $student->gender = $request->gender;
         $student->department = $request->department;
-        $student->age = $request->age;
+        $student->dob = $request->dob;
         $student->phone = $request->phone;
         $student->email = $request->email;
         $student->save();

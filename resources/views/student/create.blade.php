@@ -60,10 +60,9 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label>Age</label>
-                            <input type="number" class="form-control" placeholder="Age" name="age"
-                                value="{{ old('age') }}" required>
-                            @error('age')
+                            <label>Date of Birth</label>
+                            <input type="date" class="form-control" placeholder="Date of Birth" name="dob" pattern="\d{1,2}-\d{1,2}-\d{4}" title="Enter a date in the format dd-mm-yyyy" value="{{ old('dob') }}" required>
+                            @error('dob')
                                 <div class="alert alert-danger" role="alert">
                                     {{ $message }}
                                 </div>

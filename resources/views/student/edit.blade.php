@@ -61,10 +61,10 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label>Age</label>
-                            <input type="number" class="form-control" placeholder="Age" name="age"
-                                value="{{ $student->age }}" required>
-                            @error('age')
+                            <label>Date of Birth</label>
+                            <input type="number" class="form-control" placeholder="Date of Birth" name="dob"
+                                value="{{ $student->dob }}" required>
+                            @error('dob')
                                 <div class="alert alert-danger" role="alert">
                                     {{ $message }}
                                 </div>

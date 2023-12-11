@@ -16,12 +16,12 @@ class studentFactory extends Factory
         $gender=['male','female'];
         return [
             'name' => $this->faker->name,
-            'age' => random_int(18,80),
+            'dob' => $this->faker->dateTimeBetween('-80 years', '-18 years')->format('d-m-Y'),
             'gender' => $gender[random_int(0,1)],
             'email' => $this->faker->safeEmail,
             'phone' => $this->faker->phoneNumber,
             'address' => $this->faker->address,
-            'department' => $this->faker->sentence(3)
+            'department' => $this->faker->sentence(2)
         ];
     }
 }

@@ -140,8 +140,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <span>© 2023 <a href="">Library 📚 All rights reserved by Imon, Sayem, Ashis, Musfiq,
-                            Opu</a></span>
+                    <span>© 2023 Library 📚 All rights reserved by Imon, Sayem, Ashis, Musfiq, Opu</span>
                 </div>
             </div>
         </div>
