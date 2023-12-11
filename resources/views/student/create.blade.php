@@ -89,7 +89,7 @@
                                 </div>
                             @enderror
                         </div>
-                        <input type="submit" name="save" class="btn btn-danger" value="save">
+                        <input type="submit" name="save" class="w-25 mt-2 btn btn-success" value="save">
                     </form>
                 </div>
             </div>
