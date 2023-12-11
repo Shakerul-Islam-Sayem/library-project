@@ -1,6 +1,15 @@
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="public/images/brand-logos/library-dark.png" width="400" alt="Library Management System"></a></p>
 
-# Laravel Library Management System
+# Library Management System
+
+A Laravel-based Library Management System with essential features:
+
+- **Manage Authors:** CRUD operations for authors.
+- **Manage Publishers:** Add, view, edit, and remove publishers.
+- **Manage Categories:** Create, modify, and delete book categories.
+- **Manage Books:** Add, update, and remove books with details.
+- **Manage Students:** Create, edit, and delete student profiles.
+- **Book Transactions:** Issue books to students and record returns.
 
 ## Quick Start 
 clone the repository
