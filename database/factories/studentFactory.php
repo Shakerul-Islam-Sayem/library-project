@@ -13,15 +13,15 @@ class studentFactory extends Factory
      */
     public function definition()
     {
-        $gender=['male','female'];
+        // $gender=['male','female'];
         return [
-            'name' => $this->faker->name,
-            'dob' => $this->faker->dateTimeBetween('-80 years', '-18 years')->format('d-m-Y'),
-            'gender' => $gender[random_int(0,1)],
-            'email' => $this->faker->safeEmail,
-            'phone' => $this->faker->phoneNumber,
-            'address' => $this->faker->address,
-            'department' => $this->faker->sentence(2)
+            // 'name' => $this->faker->name,
+            // 'dob' => $this->faker->dateTimeBetween('-80 years', '-18 years')->format('Y-d-m'),
+            // 'gender' => $gender[random_int(0,1)],
+            // 'email' => $this->faker->safeEmail,
+            // 'phone' => $this->faker->phoneNumber,
+            // 'address' => $this->faker->address,
+            // 'department' => $this->faker->sentence(2)
         ];
     }
 }

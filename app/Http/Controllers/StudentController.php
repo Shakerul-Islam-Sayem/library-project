@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\student;
+use Illuminate\Routing\Controller;
 use App\Http\Requests\StorestudentRequest;
 use App\Http\Requests\UpdatestudentRequest;
 
@@ -51,7 +52,7 @@ class StudentController extends Controller
      */
     public function show($id)
     {
-        $student = student::find($id)->first();
+        $student = student::find($id);
         return $student;
     }
 
@@ -76,6 +77,7 @@ class StudentController extends Controller
      */
     public function update(UpdatestudentRequest $request, $id)
     {
+
         $student = student::find($id);
         $student->name = $request->name;
         $student->address = $request->address;

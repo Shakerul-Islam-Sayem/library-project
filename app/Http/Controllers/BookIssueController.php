@@ -22,7 +22,7 @@ class BookIssueController extends Controller
     public function index()
     {
         return view('book.issueBooks', [
-            'books' => book_issue::Paginate(5)
+            'books' => book_issue::Paginate(10)
         ]);
     }
 

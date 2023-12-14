@@ -85,20 +85,24 @@
                         console.log(student);
 
                         // Parse date of birth and calculate age
-                    var dobParts = student['dob'].split('-');
-                    var dob = new Date(dobParts[2], dobParts[1] - 1, dobParts[0]); // Assuming format: dd-mm-yyyy
-                    var today = new Date();
-                    var age = today.getFullYear() - dob.getFullYear();
+                        var dobParts = student['dob'].split('-');
+                        var dob = new Date(dobParts[0], dobParts[2] - 1, dobParts[
+                        1]); // Assuming format: Y-d-m
+                        var today = new Date();
+                        var age = today.getFullYear() - dob.getFullYear();
 
-                    // Adjust age if the birthday hasn't occurred yet this year
-                    if (today.getMonth() < dob.getMonth() || (today.getMonth() === dob.getMonth() && today.getDate() < dob.getDate())) {
-                        age--;
-                    }
+                        // Adjust age if the birthday hasn't occurred yet this year
+                        if (today.getMonth() < dob.getMonth() || (today.getMonth() === dob
+                                .getMonth() && today.getDate() < dob.getDate())) {
+                            age--;
+
+                        }
 
                         form = "<tr><td>Student Name :</td><td><b>" + student['name'] +
                             "</b></td></tr><tr><td>Address :</td><td><b>" + student['address'] +
                             "</b></td></tr><tr><td>Gender :</td><td><b>" + student['gender'] +
-                            "</b></td></tr><tr><td>Department :</td><td><b>" + student['department'] +
+                            "</b></td></tr><tr><td>Department :</td><td><b>" + student[
+                                'department'] +
                             "</b></td></tr><tr><td>Age :</td><td><b>" + age + " years" +
                             "</b></td></tr><tr><td>Phone :</td><td><b>" + student['phone'] +
                             "</b></td></tr><tr><td>Email :</td><td><b>" + student['email'] +
@@ -119,21 +123,28 @@
         });
 
         // Delete student script
-        $(".delete-student").on("click", function() {
-            var s_id = $(this).data("sid");
-            $.ajax({
-                url: "delete-student.php",
-                type: "POST",
-                data: {
-                    sid: s_id
-                },
-                success: function(data) {
-                    $(".message").html(data);
-                    setTimeout(function() {
-                        window.location.reload();
-                    }, 2000);
-                }
-            });
+$(".delete-student").on("click", function() {
+    var s_id = $(this).data("sid");
+
+    // Display a confirmation dialog
+    var confirmDelete = confirm("Are you sure you want to delete this student?");
+
+    // If the user confirms, proceed with the deletion
+    if (confirmDelete) {
+        $.ajax({
+            url: "delete-student.php",
+            type: "POST",
+            data: {
+                sid: s_id
+            },
+            success: function(data) {
+                $(".message").html(data);
+                setTimeout(function() {
+                    window.location.reload();
+                }, 2000);
+            }
         });
+    }
+});
     </script>
 @endsection

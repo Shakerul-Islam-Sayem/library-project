@@ -62,10 +62,10 @@ ul{
     text-transform: uppercase;
     padding: 10px 13px;
     display: block;
-    transition: all 0.3s;
+    transition: all 0.4s;
 }
 .menu li a:hover{
-    background: #e0ffda;
+    background: #e4f7e1;
     color: #3ca300ec;
     box-shadow: 1px 1px 10px #9ab3907e;
 }

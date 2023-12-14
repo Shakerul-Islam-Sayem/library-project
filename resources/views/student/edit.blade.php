@@ -54,7 +54,7 @@
                             <label>Department</label>
                             <input type="text" class="form-control" placeholder="Department" name="department"
                                 value="{{ $student->department }}" required>
-                            @error('class')
+                            @error('department')
                                 <div class="alert alert-danger" role="alert">
                                     {{ $message }}
                                 </div>
@@ -62,7 +62,7 @@
                         </div>
                         <div class="form-group">
                             <label>Date of Birth</label>
-                            <input type="number" class="form-control" placeholder="Date of Birth" name="dob"
+                            <input type="date" class="form-control" placeholder="Date of Birth" name="dob"
                                 value="{{ $student->dob }}" required>
                             @error('dob')
                                 <div class="alert alert-danger" role="alert">

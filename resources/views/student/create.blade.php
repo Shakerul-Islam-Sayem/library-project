@@ -51,9 +51,9 @@
                         </div>
                         <div class="form-group">
                             <label>Department</label>
-                            <input type="text" class="form-control" placeholder="Department" name="department "
-                                value="{{ old('department ') }}" required>
-                            @error('class')
+                            <input type="text" class="form-control" placeholder="Department" name="department"
+                                value="{{ old('department') }}" required>
+                            @error('department')
                                 <div class="alert alert-danger" role="alert">
                                     {{ $message }}
                                 </div>
@@ -61,7 +61,7 @@
                         </div>
                         <div class="form-group">
                             <label>Date of Birth</label>
-                            <input type="date" class="form-control" placeholder="Date of Birth" name="dob" pattern="\d{1,2}-\d{1,2}-\d{4}" title="Enter a date in the format dd-mm-yyyy" value="{{ old('dob') }}" required>
+                            <input type="date" class="form-control" placeholder="Date of Birth" name="dob" value="{{ old('dob') }}" required>
                             @error('dob')
                                 <div class="alert alert-danger" role="alert">
                                     {{ $message }}

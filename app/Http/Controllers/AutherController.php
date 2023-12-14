@@ -18,7 +18,7 @@ class AutherController extends Controller
     public function index()
     {
         return view('auther.index', [
-            'authors' => auther::Paginate(5)
+            'authors' => auther::Paginate(10)
         ]);
     }
 
