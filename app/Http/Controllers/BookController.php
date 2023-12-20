@@ -46,12 +46,15 @@ class BookController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(StorebookRequest $request)
-    {
-        book::create($request->validated() + [
-            'status' => 'Y'
-        ]);
-        return redirect()->route('books');
-    }
+{
+    $status = $request->has('status') ? 'Y' : 'N';
+
+    book::create($request->validated() + [
+        'status' => $status
+    ]);
+
+    return redirect()->route('books');
+}
 
 
     /**
@@ -78,15 +81,17 @@ class BookController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(UpdatebookRequest $request, $id)
-    {
-        $book = book::find($id);
-        $book->name = $request->name;
-        $book->auther_id = $request->author_id;
-        $book->category_id = $request->category_id;
-        $book->publisher_id = $request->publisher_id;
-        $book->save();
-        return redirect()->route('books');
-    }
+{
+    $book = book::find($id);
+    $book->name = $request->name;
+    $book->auther_id = $request->author_id;
+    $book->category_id = $request->category_id;
+    $book->publisher_id = $request->publisher_id;
+    $book->status = $request->has('status') ? 'Y' : 'N';
+    $book->save();
+
+    return redirect()->route('books');
+}
 
     /**
      * Remove the specified resource from storage.

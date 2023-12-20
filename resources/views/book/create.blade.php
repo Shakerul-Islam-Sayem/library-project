@@ -29,7 +29,8 @@
                         </div>
                         <div class="form-group">
                             <label>Category</label>
-                            <select class="form-control @error('category_id') isinvalid @enderror " name="category_id" required>
+                            <select class="form-control @error('category_id') isinvalid @enderror " name="category_id"
+                                required>
                                 <option value="">Select Category</option>
                                 @foreach ($categories as $category)
                                     <option value="{{ $category->id }}">{{ $category->name }}</option>
@@ -57,7 +58,8 @@
                         </div>
                         <div class="form-group">
                             <label>Publisher</label>
-                            <select class="form-control @error('publisher_id') isinvalid @enderror " name="publisher_id" required>
+                            <select class="form-control @error('publisher_id') isinvalid @enderror " name="publisher_id"
+                                required>
                                 <option value="">Select Publisher</option>
                                 @foreach ($publishers as $publisher)
                                     <option value='{{ $publisher->id }}'>{{ $publisher->name }}</option>";
@@ -69,11 +71,19 @@
                                 </div>
                             @enderror
                         </div>
+                        <div class="form-group">
+                            <label>Status</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="status" value="Y" checked>
+                                <label class="form-check-label">
+                                    Available
+                                </label>
+                            </div>
+                        </div>
                         <input type="submit" name="save" class="w-25 mt-2 btn btn-success" value="save" required>
                     </form>
                 </div>
             </div>
         </div>
     </div>
-
 @endsection

@@ -16,7 +16,7 @@
                     <div class="yourform">
                         <table cellpadding="10px" width="90%" style="margin: 0 0 20px;">
                             <tr>
-                                <td>StudentName: </td>
+                                <td>Student Name: </td>
                                 <td><b>{{ $book->student->name }}</b></td>
                             </tr>
                             <tr>
@@ -52,7 +52,7 @@
                                 @if (date('Y-m-d') > $book->return_date->format('d-m-Y'))
                                     <tr>
                                         <td>Fine</td>
-                                        <td>Rs. {{ $fine }}</td>
+                                        <td><b>BDT {{ $fine }}</b></td>
                                     </tr>
                                 @endif
                             @endif

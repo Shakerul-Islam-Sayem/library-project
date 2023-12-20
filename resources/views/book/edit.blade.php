@@ -12,13 +12,12 @@
             </div>
             <div class="row">
                 <div class="offset-md-3 col-md-6">
-                    <form class="yourform" action="{{ route('book.update', $book->id) }}" method="post"
-                        autocomplete="off">
+                    <form class="yourform" action="{{ route('book.update', $book->id) }}" method="post" autocomplete="off">
                         @csrf
                         <div class="form-group">
                             <label>Book Name</label>
                             <input type="text" class="form-control @error('name') isinvalid @enderror"
-                                placeholder="Book Name" name="name" value="{{ $book->name }}" >
+                                placeholder="Book Name" name="name" value="{{ $book->name }}">
                             @error('name')
                                 <div class="alert alert-danger" role="alert">
                                     {{ $message }}
@@ -27,8 +26,7 @@
                         </div>
                         <div class="form-group">
                             <label>Category</label>
-                            <select class="form-control @error('category_id') isinvalid @enderror " name="category_id"
-                                >
+                            <select class="form-control @error('category_id') isinvalid @enderror " name="category_id">
                                 <option value="">Select Category</option>
                                 @foreach ($categories as $category)
                                     @if ($category->id == $book->category_id)
@@ -64,8 +62,7 @@
                         </div>
                         <div class="form-group">
                             <label>Publisher</label>
-                            <select class="form-control @error('publisher_id') isinvalid @enderror "
-                                name="publisher_id" >
+                            <select class="form-control @error('publisher_id') isinvalid @enderror " name="publisher_id">
                                 <option value="">Select Publisher</option>
                                 @foreach ($publishers as $publisher)
                                     @if ($publisher->id == $book->publisher_id)
@@ -81,11 +78,21 @@
                                 </div>
                             @enderror
                         </div>
-                        <input type="submit" name="save" class="w-25 mt-2 btn btn-success" value="Update" >
+                        <div class="form-group">
+                            <label>Status</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="status" value="Y"
+                                    {{ $book->status == 'Y' ? 'checked' : '' }}>
+                                <label class="form-check-label">
+                                    Available
+                                </label>
+                            </div>
+                        </div>
+
+                        <input type="submit" name="save" class="w-25 mt-2 btn btn-success" value="Update">
                     </form>
                 </div>
             </div>
         </div>
     </div>
-
 @endsection
