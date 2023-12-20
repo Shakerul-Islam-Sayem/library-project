@@ -39,7 +39,7 @@
                                         @if ($book->status == 'Y')
                                             <span class='badge badge-success'>Available</span>
                                         @else
-                                            <span class='badge badge-danger'>Issued</span>
+                                            <span class='badge badge-danger'>Not Available</span>
                                         @endif
                                     </td>
                                     <td class="edit">
